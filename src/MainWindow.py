@@ -5,6 +5,7 @@
 #i have no idea what to say but it looks
 #proffesional. Cool.
 
+import os
 import sys
 import requests
 import datetime
@@ -206,7 +207,7 @@ class Window(QMainWindow):
             self.close()
 
         #if you are viewing the source code, the key will be x'd out. Get your own key at openweathermap.org when testing
-        self.api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=YOUR_API_KEY_HERE&q='
+        self.api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=' + os.environ.get('OPENWEATHER_API_KEY')  +  '&q='
         self.inputtedCity = self.contents
 
         self.url = self.api_address + self.inputtedCity
