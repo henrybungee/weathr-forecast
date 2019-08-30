@@ -33,5 +33,6 @@ software. For starters, the first time you boot
 up, your city should be set to New York. 
 
 
+
 To change the city, click on the button that says
 "Change City" (Simple enough, huh?). 
