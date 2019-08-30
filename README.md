@@ -51,14 +51,11 @@ it is the metric system conversions (Celsius,
 KPH, etc.) but you can chage to the metric system
 and even the ISU (International System of Units).
 
-<<<<<<< HEAD
 #### Shortcuts
 
 Change City: Ctrl+Shift+C
 Preferences: Ctrl+P
 
-=======
->>>>>>> b7207f08b127fd0ea97355b01e7d6031cfe90835
 ## Conclusion
 
 Weathr is under the GPL v3.0 and all the rules are
