@@ -206,7 +206,10 @@ class Window(QMainWindow):
                 f.write('New York')
             self.close()
 
-        #if you are viewing the source code, the key will be x'd out. Get your own key at openweathermap.org when testing
+        #if you are viewing the source code, which you are, will have to create a
+        #an enviornmental variable and set it to your openweathermap key. 
+        #Or you can just remove the +os.environ.get() and replace it with your 
+        #OpenWeatherMap API Key
         self.api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=' + os.environ.get('OPENWEATHER_API_KEY')  +  '&q='
         self.inputtedCity = self.contents
 
