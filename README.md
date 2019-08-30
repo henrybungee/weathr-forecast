@@ -40,6 +40,11 @@ When you open the dialog, it's quite self-explanatory.
 You have the option of selecting your own city or 
 tracking location instead.
 
+**NEW IN 2.6.3**
+UV tracking has been added. There are 5 levels of 
+intensity. LOW, MODERATE, HIGH, VERY HIGH, and
+EXTREME. Each of these has their own colors. 
+
    **Note**
 The location tracking is dependent on 
 the wifi. If your router's location is 
