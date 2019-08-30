@@ -1,4 +1,2 @@
-require sys
-require requests
-require datetime
-requre PyQt5
+requests==2.22.0
+PyQt5==5.0
