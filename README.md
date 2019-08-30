@@ -21,7 +21,7 @@ download the repository and run the files.
 **I PROMISE THAT I WILL RELEASE AN ACTUAL FILE SOON**
 
 But for now, if you want a copy, just run from the source
-or use [PyInstaller] (https://www.pyinstaller.org/ "PyInstaller's Homepage")
+or use [PyInstaller](https://www.pyinstaller.org/ "PyInstaller's Homepage")
 to compile the MainWindow.py file to a .exe, a .AppImage
 or a .app. 
 
