@@ -151,6 +151,8 @@ class Window(QMainWindow):
         self.cityBtn.setStyleSheet('background-color: #7c807e;')
         self.cityBtn.clicked.connect(self.changeCityWindow.show)
         self.cityBtn.clicked.connect(self.close)
+        self.cityBtn.setShortcut('Ctrl+Shift+C')
+
 
         self.settingsBtn = QPushButton(QIcon('Images/gearsettings.png'), "Preferences", self)
         self.settingsBtn.move(140, 350)
@@ -159,6 +161,7 @@ class Window(QMainWindow):
         self.settingsBtn.clicked.connect(self.openUnitsMenu)
         self.settingsBtn.clicked.connect(self.close)
         self.settingsBtn.setToolTip('Open the Preferences to change the settings')
+        self.settingsBtn.setShortcut('Ctrl+P')
 
         #create the about window button
         self.aboutBtn = QPushButton(QIcon('Images/qmark.svg'), "", self)
@@ -173,6 +176,7 @@ class Window(QMainWindow):
         self.reloadBtn.resize(30, 30)
         self.reloadBtn.setStyleSheet('background-color: #7c807e;')
         self.reloadBtn.clicked.connect(self.reloadWeather)
+        self.reloadBtn.setShortcut('Ctrl+R')
 
     def openAboutWindow(self):
         self.aboutWindow = about.AboutWindow()
@@ -202,7 +206,7 @@ class Window(QMainWindow):
             self.close()
 
         #if you are viewing the source code, the key will be x'd out. Get your own key at openweathermap.org when testing
-        self.api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=YOUR_API_KEY_HERE&q='
+        self.api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=d1847007d3c6e9e69fb4e2d16b65cb90&q='
         self.inputtedCity = self.contents
 
         self.url = self.api_address + self.inputtedCity
