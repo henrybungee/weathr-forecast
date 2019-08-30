@@ -36,3 +36,25 @@ up, your city should be set to New York.
 
 To change the city, click on the button that says
 "Change City" (Simple enough, huh?). 
+When you open the dialog, it's quite self-explanatory.
+You have the option of selecting your own city or 
+tracking location instead.
+
+   **Note**
+The location tracking is dependent on 
+the wifi. If your router's location is 
+not the same as where you are, you are 
+out of luck.
+
+Also, you can change conversions. By default,
+it is the metric system conversions (Celsius,
+KPH, etc.) but you can chage to the metric system
+and even the ISU (International System of Units).
+
+## Conclusion
+
+Weathr is under the GPL v3.0 and all the rules are
+to be followed. The breaking of those rules are 
+against the GPL. Otherwise, have fun with this little
+software and continue to make changes. Also, I think
+I need help making the code more efficient.
