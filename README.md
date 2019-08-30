@@ -32,7 +32,7 @@ the basic information you need to operate the
 software. For starters, the first time you boot
 up, your city should be set to New York. 
 
-
+![screeshot](https://github.com/henrybungee/weathr-forecast/blob/master/Screenshot%20from%202019-08-30%2011-12-12.png "Screenshot")
 
 To change the city, click on the button that says
 "Change City" (Simple enough, huh?). 
