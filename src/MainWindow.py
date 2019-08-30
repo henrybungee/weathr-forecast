@@ -9,6 +9,7 @@ import os
 import sys
 import requests
 import datetime
+import webbrowser
 
 import AboutWindow as about
 import ConversionsWindow as units
@@ -140,6 +141,14 @@ class Window(QMainWindow):
         self.countryLabel = QLabel(self)
         self.countryLabel.move(15, 260)
         self.countryLabel.resize(600, 30)
+        self.uvIndexLabel = QLabel(self)
+        self.uvIndexLabel.move(15, 285)
+        self.uvIndexLabel.resize(600, 30)
+        self.uvDesc = QLabel(self)
+        self.uvDesc.resize(100, 50)
+        self.uvDesc.move(15, 300)
+        self.uvDesc.setStyleSheet('font-size: 10px;')
+        self.uvDesc.setWordWrap(True)
 
         if self.internetStatus == 1:
             self.getWeather()
@@ -178,6 +187,7 @@ class Window(QMainWindow):
         self.reloadBtn.setStyleSheet('background-color: #7c807e;')
         self.reloadBtn.clicked.connect(self.reloadWeather)
         self.reloadBtn.setShortcut('Ctrl+R')
+        
 
     def openAboutWindow(self):
         self.aboutWindow = about.AboutWindow()
@@ -270,6 +280,37 @@ class Window(QMainWindow):
         self.cityDisplayName.setText(self.json_data["name"]+ ", " +self.json_data["sys"]["country"])
         self.windDegreeLabel.setText("Pressure            " +str(self.json_data["main"]["pressure"]) + " hPa")
 
+        #get the uv index
+        self.uv_address = 'http://api.openweathermap.org/data/2.5/uvi/forecast?appid=' + os.environ.get('OPENWEATHER_API_KEY')  +  '&lat=' +str(self.json_data["coord"]["lat"]) + '&lon=' +str(self.json_data["coord"]["lon"])+ '&cnt=1'
+        print(self.uv_address)
+
+        #actually create a variable from the url we created
+        self.uv_data = requests.get(self.uv_address).json()
+
+        self.uvIndexData = self.uv_data[0]["value"]
+        print(self.uvIndexData)
+
+        #change the colors according to the uv index (green lowest, violet highest)
+        if self.uvIndexData == 0.0 and self.uvIndexData >= 2.9:
+            self.uvIndexLabel.setStyleSheet('color: #4cff42;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    LOW")
+
+        elif self.uvIndexData >= 3.0 and self.uvIndexData <= 5.9:
+            self.uvIndexLabel.setStyleSheet('color: #ffd903;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    MODERATE")
+
+        elif self.uvIndexData >= 6.0 and self.uvIndexData <= 7.9:
+            self.uvIndexLabel.setStyleSheet('color: #ff9d00; font-size: 14px;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    HIGH")
+
+        elif self.uvIndexData >= 8.0 and self.uvIndexData <= 10.9:
+            self.uvIndexLabel.setStyleSheet('color: #d63131;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    VERY HIGH")
+
+        elif self.uvIndexData >= 11.0:
+            self.uvIndexLabel.setStyleSheet('color: #d63131;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    EXTREME")
+
         #change the icons
         if self.json_data["weather"][0]["main"] == "Clear":
             self.imageIconLabel.setPixmap(QPixmap('Images/iconfinder_weather-01_1530392.png'))
@@ -352,6 +393,27 @@ class Window(QMainWindow):
 
         print(self.windSpeedLabel.text())
         print(self.weatherTemp.text())
+
+        #change the colors according to the uv index (green lowest, violet highest)
+        if self.uvIndexData == 0.0 and self.uvIndexData >= 2.9:
+            self.uvIndexLabel.setStyleSheet('color: #4cff42;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    LOW")
+            
+        elif self.uvIndexData >= 3.0 and self.uvIndexData <= 5.9:
+            self.uvIndexLabel.setStyleSheet('color: #ffd903;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    MODERATE")
+            
+        elif self.uvIndexData >= 6.0 and self.uvIndexData <= 7.9:
+            self.uvIndexLabel.setStyleSheet('color: #ff9d00; font-size: 14px;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    HIGH")
+            
+        elif self.uvIndexData >= 8.0 and self.uvIndexData <= 10.9:
+            self.uvIndexLabel.setStyleSheet('color: #d63131;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    VERY HIGH")
+            
+        elif self.uvIndexData >= 11.0:
+            self.uvIndexLabel.setStyleSheet('color: #d63131;')
+            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    EXTREME")
 
         #change the imagery
         if self.json_data["weather"][0]["main"] == "Clear":

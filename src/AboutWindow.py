@@ -15,7 +15,7 @@ class AboutWindow(QtWidgets.QDialog):
         self.setGeometry(self.left, self.top, self.width, self.height)
 
         #define version etc.:
-        self.VERSION = '2.6.2'
+        self.VERSION = '2.6.3'
         self.VERSION_TYPE = 'Alpha'
         self.DESCRIPTION = 'Weathr is a current weather application written in Python using the Qt 5 library and OpenWeatherMap. With this application you have the power to see the current weather, as well as change your location and metric conversions.'
 
