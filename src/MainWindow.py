@@ -206,7 +206,7 @@ class Window(QMainWindow):
             self.close()
 
         #if you are viewing the source code, the key will be x'd out. Get your own key at openweathermap.org when testing
-        self.api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=d1847007d3c6e9e69fb4e2d16b65cb90&q='
+        self.api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=YOUR_API_KEY_HERE&q='
         self.inputtedCity = self.contents
 
         self.url = self.api_address + self.inputtedCity
