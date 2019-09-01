@@ -290,26 +290,27 @@ class Window(QMainWindow):
         self.uvIndexData = self.uv_data[0]["value"]
         print(self.uvIndexData)
 
+
         #change the colors according to the uv index (green lowest, violet highest)
         if self.uvIndexData == 0.0 and self.uvIndexData >= 2.9:
             self.uvIndexLabel.setStyleSheet('color: #4cff42;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    LOW")
-
+            self.uvIndexLabel.setText("<b>UV Index:                  " +str(self.uvIndexData)+ "    LOW</b>")
+            
         elif self.uvIndexData >= 3.0 and self.uvIndexData <= 5.9:
             self.uvIndexLabel.setStyleSheet('color: #ffd903;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    MODERATE")
-
+            self.uvIndexLabel.setText("<b>UV Index:                  " +str(self.uvIndexData)+ "    MODERATE</b>")
+            
         elif self.uvIndexData >= 6.0 and self.uvIndexData <= 7.9:
             self.uvIndexLabel.setStyleSheet('color: #ff9d00; font-size: 14px;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    HIGH")
-
+            self.uvIndexLabel.setText("<b>UV Index:                  " +str(self.uvIndexData)+ "    HIGH</b>")
+            
         elif self.uvIndexData >= 8.0 and self.uvIndexData <= 10.9:
             self.uvIndexLabel.setStyleSheet('color: #d63131;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    VERY HIGH")
-
+            self.uvIndexLabel.setText("<b>UV Index:                  " +str(self.uvIndexData)+ "    VERY HIGH</b>")
+            
         elif self.uvIndexData >= 11.0:
             self.uvIndexLabel.setStyleSheet('color: #d63131;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    EXTREME")
+            self.uvIndexLabel.setText("<b>UV Index:                  " +str(self.uvIndexData)+ "    EXTREME</b>")
 
         #change the icons
         if self.json_data["weather"][0]["main"] == "Clear":
@@ -397,23 +398,23 @@ class Window(QMainWindow):
         #change the colors according to the uv index (green lowest, violet highest)
         if self.uvIndexData == 0.0 and self.uvIndexData >= 2.9:
             self.uvIndexLabel.setStyleSheet('color: #4cff42;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    LOW")
+            self.uvIndexLabel.setText("<b>UV Index                   " +str(self.uvIndexData)+ "    LOW</b>")
             
         elif self.uvIndexData >= 3.0 and self.uvIndexData <= 5.9:
             self.uvIndexLabel.setStyleSheet('color: #ffd903;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    MODERATE")
+            self.uvIndexLabel.setText("<b>UV Index:                  " +str(self.uvIndexData)+ "    MODERATE</b>")
             
         elif self.uvIndexData >= 6.0 and self.uvIndexData <= 7.9:
             self.uvIndexLabel.setStyleSheet('color: #ff9d00; font-size: 14px;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    HIGH")
+            self.uvIndexLabel.setText("<b>UV Index:                   " +str(self.uvIndexData)+ "    HIGH</b>")
             
         elif self.uvIndexData >= 8.0 and self.uvIndexData <= 10.9:
             self.uvIndexLabel.setStyleSheet('color: #d63131;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    VERY HIGH")
+            self.uvIndexLabel.setText("<b>UV Index:                    " +str(self.uvIndexData)+ "    VERY HIGH</b>")
             
         elif self.uvIndexData >= 11.0:
             self.uvIndexLabel.setStyleSheet('color: #d63131;')
-            self.uvIndexLabel.setText("UV Index              " +str(self.uvIndexData)+ "    EXTREME")
+            self.uvIndexLabel.setText("<b>UV Index              " +str(self.uvIndexData)+ "    EXTREME</b>")
 
         #change the imagery
         if self.json_data["weather"][0]["main"] == "Clear":
