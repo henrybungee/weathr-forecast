@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='WeatherForecast',
     version='2.6.3',
-    packages=[''],
+    packages=['weathr_forecast'],
     url='https://github.com/henrybungee/weathr-forecast',
     license='GPL v3.0',
     author='henry-lunger',
