@@ -13,7 +13,12 @@ command:
 ```
 $ git clone https://github.com/henrybungee/weathr-forecast/
 ```
+Then run the setup.py file. Let me know if the setup.py file isn't working.
+Email me and copy and paste the error. Anyway, run this command:
 
+```
+$ python setup.py
+```
 And you can compile from the source code with an IDE
 of choice or run the MainWindow.py file. Or simply 
 download the repository and run the files.
